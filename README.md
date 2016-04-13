@@ -5,7 +5,7 @@
 
 ###Requirements:
 - .NET Framework / .NET Core - https://github.com/dotnet/core
-
+- Visual Studio Enterprise
 
 
 
