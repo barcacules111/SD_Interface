@@ -1,0 +1,63 @@
+.container {
+    width: 800px;
+     background-color: gainsboro;
+}
+
+div .row {
+    padding: 1.7%;
+}
+
+/*
+
+.col1 {
+    height: 500px;
+    width: 200px;
+}
+
+.col2 {
+    margin-left: 2%;
+    height: 500px;
+    width: 320px;
+    
+}
+
+.col3 {
+    margin-left: 2%;
+    margin-bottom: 5%;
+    width: 220px;
+    height: 230px;
+}
+
+.col4 {
+    margin-left: 2%;
+    width: 220px;
+    height: 230px;
+    
+}
+
+.col5 {
+    margin-right: 2%; 
+    width: 376px;
+    height: 330px;
+}
+
+.col6 {
+    margin-left: 0.5%;
+    width: 376px;
+    height: 330px;
+}
+
+.col1, .col2, .col3, .col4, .col5, .col6 {
+    display: inline-block;
+    float: left;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+*/
+
+.panel {
+    display: block;
+    float: left;
+    width: 380px;
+    margin-right: 0.5%;
+}
