@@ -10,17 +10,71 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+       
+  
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-
+   
+      <!-- Для модального окна "загрузки" моделей(прим. Кати)-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+      <!-- конец подготовки модалки -->
+      
         </head>
         <body>
+            
             <div class="container" ng-app="MyApp" ng-controller="MainController">
                 <div class="row">
-
-        <button type="submit" class="btn btn-primary" ng-click="upload1()">Upload model 1</button>
+        
+<!--        <button type="submit" class="btn btn-primary" ng-click="upload1()">Upload model 1</button>-->
+        <button type="button" class="btn btn-primary" data-toggle="modal">Upload model 1</button>
           <button type="submit" class="btn btn-primary" ng-click="upload2()">Upload model 2</button>
             <button type="submit" class="btn btn-danger" ng-click="check()">Check</button>
                 <button type="submit" class="btn btn-success" ng-click="save()">Save result</button>
+                    
+                        <!-- HTML-код модального окна-->
+                        
+                        <div id="uploadModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title" id="uploadModalLabel">Upload Files</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <form role="form" id="content">
+                                            <div class="form-group">
+                                                <label for="model-first" class="control-label">Путь к первому модулю</label>
+                                                <input type="text" class="form-control" id="model-first">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="model-second" class="control-label">Путь ко второму модулю</label>
+                                                <input type="text" class="form-control" id="model-first">
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Upload</button>
+                                        <!-- А вот тут похоже и будут ng-click="upload1() и ng-click="upload2()-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Скрипт, привязывающий событие click, открывающее модальное окно, к элементам, имеющим класс .btn-primary(он у нас у кнопок загрузки) -->
+                        <script>
+                        $(document).ready(function(){
+                          //при нажатию на любую кнопку, имеющую класс .btn
+                          $(".btn-primary").click(function() {
+                            $("#uploadModal").modal('show');
+                          });
+                        });
+                        </script>
+                        <!-- Окончание описания модального окна -->            
 
                 </div>
 
@@ -47,7 +101,13 @@
 
                     </div>
                     </div>
+            
+            
+<!--У меня редактор показывает эти строки как лишние(прим. Кати)
             </div>
-            </div>
+            </div>-->
+            
+                    
+            
         </body>
     </html>
